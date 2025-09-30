@@ -78,10 +78,8 @@ nav h1 {
     cursor: pointer;
 }
 
-.side-nav .menu:hover{
-    background: linear-gradient(360deg, #1f3c36, #333);
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+.side-nav .menu:hover {
+    scale: (1.1);
 }
 
 .nav-icons {
@@ -137,7 +135,7 @@ nav h1 {
 
     .swiper-slide img {
       display: block;
-      width: 480px;
+      width: 490px;
       height: 400px;
       object-fit: cover;
       margin-left: 20px;
@@ -192,14 +190,44 @@ nav h1 {
         font-family: bhutkii;
     }
 
-    .price-area button {
-        padding: 1vw 2vw;
-        background-color: transparent;
-        border: 2px solid white;
-        border-radius: 5px;
-        margin-top: 5px;
-        color: white;
-    }
+   .price-area button {
+  position: relative;
+  padding: 1vw 2vw;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.price-area button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;              /* start from right */
+  width: 0%;
+  height: 100%;
+  background-image: url(2nd-mt.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100px;
+  z-index: -1;
+  transition: width 0.4s ease;
+}
+
+.price-area button:hover {
+  color: white;
+}
+
+.price-area button:hover::before {
+  width: 100%;          /* expand fully */
+  left: 0;              /* shift left */
+  right: auto;
+}
+
 
     .left {
         width: 45%;
